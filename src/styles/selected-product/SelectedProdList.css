@@ -1,0 +1,14 @@
+.selected-product {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selected-product-header {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
