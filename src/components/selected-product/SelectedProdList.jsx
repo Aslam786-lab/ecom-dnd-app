@@ -1,5 +1,9 @@
 import { useSelector } from "react-redux";
-import { SortableContext } from "@dnd-kit/sortable";
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+
 import "../../styles/selected-product/SelectedProdList.css";
 import SelectedProdListItem from "./SelectedProdListItem";
 
@@ -14,12 +18,16 @@ export default function SelectedProdList({ handlePicker }) {
         <span>Product</span>
         <span>Discount</span>
       </div>
-      <SortableContext items={selectedProducts.map((item) => item.id)}>
-        {selectedProducts.map((selectedProduct) => (
+      <SortableContext
+        items={selectedProducts.map((item) => item.id)}
+        strategy={verticalListSortingStrategy}
+      >
+        {selectedProducts.map((selectedProduct, idx) => (
           <SelectedProdListItem
-            key={selectedProduct.id}
+            key={selectedProduct.id || idx}
             uniqueSortableId={`product-${selectedProduct.id}`}
             selectedProduct={selectedProduct}
+            index={idx}
             showRemoveIcon={isRemoveIcon}
             handlePicker={handlePicker}
             isParent

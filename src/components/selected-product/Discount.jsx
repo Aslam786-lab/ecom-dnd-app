@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import ShowDiscount from "./ShowDiscount";
 
 export default function Discount({ isParent }) {

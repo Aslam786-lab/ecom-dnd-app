@@ -81,6 +81,7 @@
   border: none;
   font-size: 14px;
   color: #000000cc;
+  width: 100%;
 }
 
 .add-disc-btn {
@@ -98,6 +99,10 @@
 
 .add-disc-btn.child {
   border-radius: 30px;
+}
+
+.remove-icon {
+  cursor: pointer;
 }
 
 .variant-btn {

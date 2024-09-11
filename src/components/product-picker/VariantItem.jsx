@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
-import "../../styles/product-picker/VariantItem.css";
+
 import { toggleVariant } from "../../redux/productState";
+import "../../styles/product-picker/VariantItem.css";
 
 export default function VariantItem({ variant, productId }) {
-  const { id, title, price, isChecked } = variant;
+  const { id, title, price, isChecked, inventory_quantity } = variant;
   const dispatch = useDispatch();
 
   const handleVariantToggle = () => {
@@ -23,7 +24,9 @@ export default function VariantItem({ variant, productId }) {
           <span className="variant-title">{title}</span>
         </div>
         <div className="variant-quantity">
-          <span className="variant-stock">99 available</span>
+          <span className="variant-stock">
+            {Math.abs(inventory_quantity) || 99} available
+          </span>
           <span>${price}</span>
         </div>
       </div>

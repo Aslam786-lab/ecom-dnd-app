@@ -45,6 +45,86 @@ export const data = [
       src: "https://cdn11.bigcommerce.com/s-p1xcugzp89/products/80/images/272/roundterrariumlarge.1647248662.386.513.jpg?c=1",
     },
   },
+  {
+    id: 81,
+    title: "Wool Blend Throw Blanket - Charcoal",
+    variants: [
+      {
+        id: 65,
+        product_id: 81,
+        title: "One Size",
+        price: "79",
+      },
+    ],
+    image: {
+      id: 273,
+      product_id: 81,
+      src: "https://cdn11.bigcommerce.com/s-p1xcugzp89/products/81/images/273/woolblendthrowcharcoal.1647248662.386.513.jpg?c=1",
+    },
+  },
+  {
+    id: 82,
+    title: "Ceramic Vase - Matte White",
+    variants: [
+      {
+        id: 66,
+        product_id: 82,
+        title: "Small",
+        price: "29",
+      },
+      {
+        id: 67,
+        product_id: 82,
+        title: "Medium",
+        price: "39",
+      },
+      {
+        id: 68,
+        product_id: 82,
+        title: "Large",
+        price: "49",
+      },
+    ],
+    image: {
+      id: 274,
+      product_id: 82,
+      src: "https://cdn11.bigcommerce.com/s-p1xcugzp89/products/82/images/274/ceramicvasewhite.1647248662.386.513.jpg?c=1",
+    },
+  },
+  {
+    id: 83,
+    title: "Leather Journal - A5",
+    variants: [
+      {
+        id: 69,
+        product_id: 83,
+        title: "Default Title",
+        price: "59",
+      },
+    ],
+    image: {
+      id: 275,
+      product_id: 83,
+      src: "https://cdn11.bigcommerce.com/s-p1xcugzp89/products/83/images/275/leatherjournal.1647248662.386.513.jpg?c=1",
+    },
+  },
+  {
+    id: 84,
+    title: "Handmade Wooden Cutting Board",
+    variants: [
+      {
+        id: 70,
+        product_id: 84,
+        title: "Default Title",
+        price: "45",
+      },
+    ],
+    image: {
+      id: 276,
+      product_id: 84,
+      src: "https://cdn11.bigcommerce.com/s-p1xcugzp89/products/84/images/276/woodcuttingboard.1647248662.386.513.jpg?c=1",
+    },
+  },
 ];
 
 export async function fetchP() {

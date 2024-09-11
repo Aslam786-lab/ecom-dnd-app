@@ -1,19 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
 import PickerHeader from "./PickerHeader";
 import ProductSearch from "./ProductSearch";
-import "../../styles/product-picker/ProductPicker.css";
 import PickerFooter from "./PickerFooter";
-import { useEffect, useState } from "react";
 import { fetchProductReq } from "../../redux/productState";
 import Loader from "./Loader";
 import ProductList from "./ProductList";
+import "../../styles/product-picker/ProductPicker.css";
 
 export default function ProductPicker({ togglePicker }) {
   const { productList, isLoading } = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProductReq());
+    dispatch(fetchProductReq({ searchText: "", pageNum: 1 }));
   }, []);
 
   return (

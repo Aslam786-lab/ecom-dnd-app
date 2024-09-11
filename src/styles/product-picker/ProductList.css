@@ -9,6 +9,8 @@
   overflow: scroll;
   overflow-x: hidden;
   height: 100%;
+  scroll-behavior: smooth;
+  will-change: transform;
 }
 
 ::-webkit-scrollbar {

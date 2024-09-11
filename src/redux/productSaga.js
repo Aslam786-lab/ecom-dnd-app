@@ -1,14 +1,24 @@
-import { call, put, select, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { fetchProductReq, fetchProductSuccess } from "./productState";
-import { fetchP } from "../db";
+import { apiKey, fetchProductApi } from "./constants";
+// import { fetchP } from "../db";
 
-function* fetchProduct() {
+function* fetchProduct({ payload }) {
   try {
-    const resp = yield fetchP();
-    // if (resp.ok) {
-    yield put(fetchProductSuccess(resp));
-    // }
-  } catch (error) {}
+    const { searchText, pageNum } = payload;
+    const resp = yield call(fetch, fetchProductApi(searchText, pageNum), {
+      method: "GET",
+      headers: {
+        "X-API-KEY": apiKey,
+        "Content-Type": "application/json",
+      },
+    });
+    const data = yield resp.json();
+    // const resp = yield fetchP();
+    yield put(fetchProductSuccess(data));
+  } catch (error) {
+    console.error("failed to fetch products", error);
+  }
 }
 
 export default function* productSaga() {

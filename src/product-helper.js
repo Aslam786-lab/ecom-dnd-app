@@ -20,3 +20,13 @@ export const getSelectedProd = (productList) => {
   }
   return productList.length;
 };
+
+export const debounce = (fn, time) => {
+  let timerId = null;
+  return (...args) => {
+    if (timerId) clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      fn(...args);
+    }, time);
+  };
+};
