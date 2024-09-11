@@ -8,9 +8,14 @@ const options = ["% Off", "Flat Off"];
 export default function ShowDiscount({ isParent }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("% Off");
+  const [discount, setDiscount] = useState(0);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleDiscount = (e) => {
+    setDiscount(e.target.value);
   };
 
   const handleOptionClick = (option) => {
@@ -20,7 +25,7 @@ export default function ShowDiscount({ isParent }) {
 
   return (
     <div className={`show-discount ${isParent ? "" : "child"}`}>
-      <input />
+      <input type="number" onChange={handleDiscount} value={discount} />
       <div className="custom-dropdown">
         <div className="dropdown-header" onClick={toggleDropdown}>
           {selectedOption}
